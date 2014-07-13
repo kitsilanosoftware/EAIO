@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{95087B53-A8A4-43EA-FA54-1B64A1E188F2}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>EAIO</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' " Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+    <UseDebugLibraries>True</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' " Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+    <UseDebugLibraries>False</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' " Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
+    <Midl />
+    <ClCompile>
+      <AdditionalIncludeDirectories>"include";"..\EABase\include\Common";"..\coreallocator\include";"..\EASTL\include";"..\EAAssert\include";"$(VSInstallDir)\VC\ATLMFC\INCLUDE";"$(VSInstallDir)\VC\INCLUDE";"$(WindowsSDKDir)\include";"$(VSInstallDir)\SDK\v2.0\include";"$(VSInstallDir)\INCLUDE"</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck>FALSE</BufferSecurityCheck>
+      <CompileAs>Default</CompileAs>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <CompileOnly>TRUE</CompileOnly>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4365; 4548; 4619; 4530; 4217; 4917; 4986; 4987; 4574; 4365; 4061; 4062; 4100; 4324; 4619; 4514; 4640; 4668; 4710; 4711; 4738; 4820; 4826; 4819; 4826; 4692; 4746; 4350; </DisableSpecificWarnings>
+      <ExceptionHandling>FALSE</ExceptionHandling>
+      <ForceConformanceInForLoopScope>TRUE</ForceConformanceInForLoopScope>
+      <MinimalRebuild>FALSE</MinimalRebuild>
+      <MultiProcessorCompilation>TRUE</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>_CHAR16T;_CRT_SECURE_NO_WARNINGS;_DEBUG;_HAS_CPP0X=0;_HAS_EXCEPTIONS=0;_SECURE_SCL=1;_WIN32_IE=0x0502;_WIN32_WINNT=0x0502;EA_DEBUG;EAIO_INIFILE_ENABLED=0;UTF_USE_EAASSERT=1;WIN32;WINVER=0x0502</PreprocessorDefinitions>
+      <ProcessorNumber>8</ProcessorNumber>
+      <ProgramDataBaseFileName>Debug\lib\EAIO.pdb</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>FALSE</RuntimeTypeInfo>
+      <SuppressStartupBanner>TRUE</SuppressStartupBanner>
+      <TreatWarningAsError>FALSE</TreatWarningAsError>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+    </ClCompile>
+    <Lib>
+      <OutputFile>Debug\lib\EAIO.lib</OutputFile>
+      <SuppressStartupBanner>TRUE</SuppressStartupBanner>
+    </Lib>
+    <PreBuildEvent>
+      <Command>@if not exist "Debug\lib" mkdir "Debug\lib" &amp; SET ERRORLEVEL=0
+@if not exist "Debug\build\EAIO" mkdir "Debug\build\EAIO" &amp; SET ERRORLEVEL=0</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
+    <OutDir>Debug\lib\</OutDir>
+    <IntDir>Debug\build\EAIO\vstmp\</IntDir>
+    <TargetName>EAIO</TargetName>
+    <TargetExt>.lib</TargetExt>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <ReferencePath>$(ReferencePath)</ReferencePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SourcePath)</SourcePath>
+    <ExcludePath>$(ExcludePath)</ExcludePath>
+  </PropertyGroup>
+  <ImportGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' " Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
+    <Midl />
+    <ClCompile>
+      <AdditionalIncludeDirectories>"include";"..\EABase\include\Common";"..\coreallocator\include";"..\EASTL\include";"..\EAAssert\include";"$(VSInstallDir)\VC\ATLMFC\INCLUDE";"$(VSInstallDir)\VC\INCLUDE";"$(WindowsSDKDir)\include";"$(VSInstallDir)\SDK\v2.0\include";"$(VSInstallDir)\INCLUDE"</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck>FALSE</BufferSecurityCheck>
+      <CompileAs>Default</CompileAs>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <CompileOnly>TRUE</CompileOnly>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4365; 4548; 4619; 4530; 4217; 4917; 4986; 4987; 4574; 4365; 4061; 4062; 4100; 4324; 4619; 4514; 4640; 4668; 4710; 4711; 4738; 4820; 4826; 4819; 4826; 4692; 4746; 4350; </DisableSpecificWarnings>
+      <ExceptionHandling>FALSE</ExceptionHandling>
+      <ForceConformanceInForLoopScope>TRUE</ForceConformanceInForLoopScope>
+      <MinimalRebuild>FALSE</MinimalRebuild>
+      <MultiProcessorCompilation>TRUE</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>_CHAR16T;_CRT_SECURE_NO_WARNINGS;_HAS_CPP0X=0;_HAS_EXCEPTIONS=0;_SECURE_SCL=0;_WIN32_IE=0x0502;_WIN32_WINNT=0x0502;EAIO_INIFILE_ENABLED=0;NDEBUG;UTF_USE_EAASSERT=1;WIN32;WINVER=0x0502</PreprocessorDefinitions>
+      <ProcessorNumber>8</ProcessorNumber>
+      <ProgramDataBaseFileName>Release\lib\EAIO.pdb</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>FALSE</RuntimeTypeInfo>
+      <SuppressStartupBanner>TRUE</SuppressStartupBanner>
+      <TreatWarningAsError>FALSE</TreatWarningAsError>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+    </ClCompile>
+    <Lib>
+      <OutputFile>Release\lib\EAIO.lib</OutputFile>
+      <SuppressStartupBanner>TRUE</SuppressStartupBanner>
+    </Lib>
+    <PreBuildEvent>
+      <Command>@if not exist "Release\lib" mkdir "Release\lib" &amp; SET ERRORLEVEL=0
+@if not exist "Release\build\EAIO" mkdir "Release\build\EAIO" &amp; SET ERRORLEVEL=0</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
+    <OutDir>Release\lib\</OutDir>
+    <IntDir>Release\build\EAIO\vstmp\</IntDir>
+    <TargetName>EAIO</TargetName>
+    <TargetExt>.lib</TargetExt>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <ReferencePath>$(ReferencePath)</ReferencePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SourcePath)</SourcePath>
+    <ExcludePath>$(ExcludePath)</ExcludePath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ClInclude Include="include\EAIO\Allocator.h" />
+    <ClInclude Include="include\EAIO\EAFileBase.h" />
+    <ClInclude Include="include\EAIO\EAFileDirectory.h" />
+    <ClInclude Include="include\EAIO\EAFileNotification.h" />
+    <ClInclude Include="include\EAIO\EAFileStream.h" />
+    <ClInclude Include="include\EAIO\EAFileUtil.h" />
+    <ClInclude Include="include\EAIO\EAIniFile.h" />
+    <ClInclude Include="include\EAIO\EAStream.h" />
+    <ClInclude Include="include\EAIO\EAStreamAdapter.h" />
+    <ClInclude Include="include\EAIO\EAStreamBuffer.h" />
+    <ClInclude Include="include\EAIO\EAStreamChild.h" />
+    <ClInclude Include="include\EAIO\EAStreamCpp.h" />
+    <ClInclude Include="include\EAIO\EAStreamFixedMemory.h" />
+    <ClInclude Include="include\EAIO\EAStreamMemory.h" />
+    <ClInclude Include="include\EAIO\EAStreamNull.h" />
+    <ClInclude Include="include\EAIO\FnEncode.h" />
+    <ClInclude Include="include\EAIO\FnMatch.h" />
+    <ClInclude Include="include\EAIO\PathString.h" />
+    <ClInclude Include="include\EAIO\internal\Config.h" />
+    <ClInclude Include="include\EAIO\internal\EAIOEARefCount.h" />
+    <ClInclude Include="include\EAIO\internal\EAIOEASTLCoreAllocator.h" />
+    <ClInclude Include="include\EAIO\internal\EAIOZoneObject.h" />
+    <ClInclude Include="include\EAIO\StdC\EAFileStreamStdC.h" />
+    <ClInclude Include="include\EAIO\Unix\EAFileStreamUnix.h" />
+    <ClInclude Include="include\EAIO\Win32\EAFileStreamWin32.h" />
+    <ClCompile Include="source\Allocator.cpp" />
+    <ClCompile Include="source\EAFileDirectory.cpp" />
+    <ClCompile Include="source\EAFileNotification.cpp" />
+    <ClCompile Include="source\EAFileStream.cpp" />
+    <ClCompile Include="source\EAFileUtil.cpp" />
+    <ClCompile Include="source\EAIniFile.cpp" />
+    <ClCompile Include="source\EAStreamAdapter.cpp" />
+    <ClCompile Include="source\EAStreamBuffer.cpp" />
+    <ClCompile Include="source\EAStreamChild.cpp" />
+    <ClCompile Include="source\EAStreamCpp.cpp" />
+    <ClCompile Include="source\EAStreamFixedMemory.cpp" />
+    <ClCompile Include="source\EAStreamMemory.cpp" />
+    <ClCompile Include="source\EAStreamNull.cpp" />
+    <ClCompile Include="source\FnEncode.cpp" />
+    <ClCompile Include="source\FnMatch.cpp" />
+    <ClCompile Include="source\PathString.cpp" />
+    <ClCompile Include="source\internal\EAIOCoreAllocator.cpp" />
+    <ClCompile Include="source\internal\EAIOZoneObject.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties platform_Debug_Win32="vc" vc-compiler="$(VSInstallDir)\VC\BIN\cl.exe" vc-compiler_clang="" vc-asm="$(VSInstallDir)\VC\BIN\ml.exe" vc-librarian="$(VSInstallDir)\VC\BIN\lib.exe" platform_Release_Win32="vc" build.env.PATH="$(VSInstallDir)\Common7\IDE"></UserProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
